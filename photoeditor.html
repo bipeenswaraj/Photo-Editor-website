@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Photo Editor</title>
+    <link rel="stylesheet" href="style2.css">
+	<script src="https://cdn.jsdelivr.net/npm/gif.js/dist/gif.js"></script>
+</head>
+<body>
+    <header>
+	     <
+        <h1> AB PHOTOS EDITOR</h1>
+        <p>EDIT  YOUR  PHOTOS  WITH  EASE, APPLY  STUNNING  FILTERS,  AND  ADD  CUSTOM  TEXTS!  </p>
+    </header>
+
+    <main>
+        <div class="editor-container">
+            <input type="file" id="upload" accept="image/*" class="file-input">
+            <canvas id="canvas" class="canvas"></canvas>
+            <div id="crop-overlay" class="crop-overlay"></div>
+        </div>
+
+        <div class="controls">
+            <div class="basic-filters">
+                <button onclick="applyFilter('grayscale')">Grayscale</button>
+                <button onclick="applyFilter('sepia')">Sepia</button>
+                <button onclick="applyFilter('invert')">Invert</button>
+                <button onclick="applyFilter('ai-enhance')">AI Enhance</button>
+                <button onclick="applyFilter('reset')">Reset</button>
+            </div>
+
+            <div class="advanced-filters">
+                <button onclick="applyFilter('blur')">Blur</button>
+                <button onclick="applyFilter('sharpen')">Sharpen</button>
+				<button onclick="applyFilter('pixelate')">Pixelate</button>
+                <button onclick="applyFilter('noise')">Add Noise</button>
+                <button onclick="convertToGIF()">Convert to GIF</button>
+            </div>
+
+            <div class="text-tools">
+                <input type="text" id="text-input" placeholder="Enter text" />
+                <select id="font-select">
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                </select>
+                <input type="color" id="text-color" value="#ffffff" />
+                <button onclick="addText()">Add Text</button>
+            </div>
+
+            <div class="crop-tools">
+                <button onclick="startCrop()">Start Crop</button>
+                <button onclick="applyCrop()">Apply Crop</button>
+            </div>
+
+            <div class="edit-tools">
+                <button onclick="undo()">Undo</button>
+                <button onclick="redo()">Redo</button>
+                <button onclick="exportImage()">Download Image</button>
+            </div>
+
+            <label for="brightness">Brightness</label>
+            <input type="range" id="brightness" min="-100" max="100" step="10" value="0" 
+                   oninput="adjustBrightness(parseInt(this.value))">
+        </div>
+		 
+    <div class="event-card1">
+      <img src="image4.jpg" alt="Event 2" class="event-image" height ="500" width ="760" align ="left">
+       <h1 class= "ad" align = "right-side"> EDIT YOUR PHOTO LIKE THIS </h1>
+    </div>
+	 
+    <div class="event-card2">
+      <img src="image5.jpg" alt="Event 2" class="event-image" height ="500" width ="710" align ="right">
+       <h1 class= "ad" align = "left-side"> HD QUALITY , JUST DO IT NOW </h1>
+    </div>
+    </main>
+
+    <footer>
+        <p>&copy; AB pictures. All rights reserved.</p>
+    </footer>
+    
+    <script src="script1.js"></script>
+</body>
+</html>
